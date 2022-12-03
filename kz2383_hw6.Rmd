@@ -52,6 +52,10 @@ homicide =
 
 ```
 
+
+After data cleaning, there are  `r homicide%>% nrow()` cases recorded over the past decades. There are `r homicide%>% ncol()` variables included in the data. Possible NAs are dropped for better analysis. 
+
+
 Compute 95% confidence interval for odds ratio of solving homocides comparing male and female in  baltimore and the each city in the complete dataset
 
 ```{r}
