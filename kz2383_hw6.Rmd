@@ -53,7 +53,8 @@ homicide =
 ```
 
 
-After data cleaning, there are  `r homicide%>% nrow()` cases recorded over the past decades. There are `r homicide%>% ncol()` variables included in the data. Possible NAs are dropped for better analysis. 
+After data cleaning, there are  `r homicide%>% nrow()` cases recorded over the past decades. There are `r homicide%>% ncol()` variables included in the data. Possible NAs are dropped for better analysis. Data points from cities without victim race reported are also ignored. 
+
 
 
 Compute 95% confidence interval for odds ratio of solving homocides comparing male and female in  baltimore and the each city in the complete dataset
@@ -174,4 +175,4 @@ cv_df %>%
     names_prefix = "rmse_") %>% 
   ggplot(aes(x = model, y = rmse)) + geom_violin()
 ```
-Comparing root mean square error for each constructed model, model 3 includes `babysex`,`blength`,`bhead`and `parity` has the lowest value, suggesting the best fitness. The first model only includes`blenght`and `gaweeks` has the largest rmse as expected due to limited number of estimators taken into account. The last model includes `bhead`,`blength`, `babysex` and all possible variable interactions has slightly higher rmse than the second model. This could potentially be explained by existing interactions between variables. In general. model3 turned out to be the optimal one after comparing rmse values, suggesting the best fit among the three. 
+Comparing root mean square error for each constructed model, model 3 includes babysex,blength,bhead and parity has the lowest value, suggesting the best fitness. The first model only includes blength and gaweeks has the largest rmse as expected due to limited number of estimators taken into account. The last model includes bhead,blength, babysex and all possible variable interactions has slightly higher rmse than the second model. This could potentially be explained by existing interactions between variables. In general. model3 turned out to be the optimal one after comparing rmse values, suggesting the best fit among the three. 
